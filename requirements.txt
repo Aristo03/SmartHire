@@ -8,6 +8,7 @@ jupyter
 ipykernel
 streamlit
 pymupdf
+pytest
 python-docx
 joblib
 openpyxl
