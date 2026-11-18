@@ -1,7 +1,7 @@
 import io
 
 import docx
-import fitz
+import pymupdf as fitz
 import pytest
 
 from src.features.match_features import extract_skills

@@ -2,7 +2,7 @@ import io
 from pathlib import Path
 
 import docx   # python-docx
-import fitz   # PyMuPDF
+import pymupdf as fitz  # PyMuPDF
 
 
 def extract_text_from_pdf(data: bytes) -> str:
