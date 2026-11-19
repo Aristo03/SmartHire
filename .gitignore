@@ -28,3 +28,7 @@ data/raw/*
 data/interim/*
 data/processed/*
 !data/**/.gitkeep
+
+# Files the deployed web app needs
+!data/processed/jobs_app.csv.gz
+!data/processed/resumes_clean.csv

@@ -62,7 +62,9 @@ class JobRecommender:
         candidates = np.argsort(scores)[::-1][: top_n * 3]
         top_idx = (self.jobs.loc[candidates, ["jobtitle", "company"]]
                    .drop_duplicates().head(top_n).index.to_numpy())
-        result = self.jobs.loc[top_idx, ["jobtitle", "company", "location", "experience", "skills"]].copy()
+        cols = ["jobtitle", "company", "location", "experience", "skills", "description"]
+        cols += [c for c in ["job_family"] if c in self.jobs.columns]   # added by the clustering notebook
+        result = self.jobs.loc[top_idx, cols].copy()
         result["match_score"] = scores[top_idx].round(3)
 
         resume_skills = set(extract_skills(resume_text))
